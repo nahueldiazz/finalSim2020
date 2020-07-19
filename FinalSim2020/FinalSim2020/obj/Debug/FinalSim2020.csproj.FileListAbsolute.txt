@@ -1,0 +1,10 @@
+E:\facultad\4. cuarto año\SIM\Final\finalSim2020\FinalSim2020\FinalSim2020\bin\Debug\FinalSim2020.exe.config
+E:\facultad\4. cuarto año\SIM\Final\finalSim2020\FinalSim2020\FinalSim2020\bin\Debug\FinalSim2020.exe
+E:\facultad\4. cuarto año\SIM\Final\finalSim2020\FinalSim2020\FinalSim2020\bin\Debug\FinalSim2020.pdb
+E:\facultad\4. cuarto año\SIM\Final\finalSim2020\FinalSim2020\FinalSim2020\obj\Debug\FinalSim2020.csprojAssemblyReference.cache
+E:\facultad\4. cuarto año\SIM\Final\finalSim2020\FinalSim2020\FinalSim2020\obj\Debug\FinalSim2020.Form1.resources
+E:\facultad\4. cuarto año\SIM\Final\finalSim2020\FinalSim2020\FinalSim2020\obj\Debug\FinalSim2020.Properties.Resources.resources
+E:\facultad\4. cuarto año\SIM\Final\finalSim2020\FinalSim2020\FinalSim2020\obj\Debug\FinalSim2020.csproj.GenerateResource.cache
+E:\facultad\4. cuarto año\SIM\Final\finalSim2020\FinalSim2020\FinalSim2020\obj\Debug\FinalSim2020.csproj.CoreCompileInputs.cache
+E:\facultad\4. cuarto año\SIM\Final\finalSim2020\FinalSim2020\FinalSim2020\obj\Debug\FinalSim2020.exe
+E:\facultad\4. cuarto año\SIM\Final\finalSim2020\FinalSim2020\FinalSim2020\obj\Debug\FinalSim2020.pdb
