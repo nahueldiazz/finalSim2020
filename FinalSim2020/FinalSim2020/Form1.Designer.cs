@@ -64,7 +64,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.nroB_comb = new System.Windows.Forms.TextBox();
             this.nroA_comb = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabla_cliente = new System.Windows.Forms.DataGridView();
             this.numero_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.min_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minuto_fuera = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,10 +79,19 @@
             this.label11 = new System.Windows.Forms.Label();
             this.nroB_acc = new System.Windows.Forms.TextBox();
             this.nroA_acc = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.max_cliente = new System.Windows.Forms.TextBox();
+            this.max_accesorios = new System.Windows.Forms.TextBox();
+            this.max_gomeria = new System.Windows.Forms.TextBox();
+            this.max_combustible = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_estacion)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_cliente)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
@@ -378,21 +387,21 @@
             this.nroA_comb.TabIndex = 12;
             this.nroA_comb.Text = "0,75";
             // 
-            // dataGridView1
+            // tabla_cliente
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tabla_cliente.AllowUserToAddRows = false;
+            this.tabla_cliente.AllowUserToDeleteRows = false;
+            this.tabla_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla_cliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numero_cliente,
             this.min_llegada,
             this.minuto_fuera,
             this.diferencia});
-            this.dataGridView1.Location = new System.Drawing.Point(932, 485);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(453, 195);
-            this.dataGridView1.TabIndex = 11;
+            this.tabla_cliente.Location = new System.Drawing.Point(932, 485);
+            this.tabla_cliente.Name = "tabla_cliente";
+            this.tabla_cliente.ReadOnly = true;
+            this.tabla_cliente.Size = new System.Drawing.Size(453, 195);
+            this.tabla_cliente.TabIndex = 11;
             // 
             // numero_cliente
             // 
@@ -512,14 +521,96 @@
             this.nroA_acc.TabIndex = 12;
             this.nroA_acc.Text = "1";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(33, 558);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(188, 13);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Maximo numero de cola en accesorios";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(33, 529);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(174, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Maximo numero de cola en gomeria";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(33, 499);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(193, 13);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Maximo numero de cola en combustible";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(929, 469);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(185, 13);
+            this.label15.TabIndex = 18;
+            this.label15.Text = "Tabla de cliente se fueron del sistema";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(453, 529);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(197, 13);
+            this.label16.TabIndex = 19;
+            this.label16.Text = "Tiempo maximo de un cliente en sistema";
+            // 
+            // max_cliente
+            // 
+            this.max_cliente.Location = new System.Drawing.Point(656, 526);
+            this.max_cliente.Name = "max_cliente";
+            this.max_cliente.Size = new System.Drawing.Size(100, 20);
+            this.max_cliente.TabIndex = 20;
+            // 
+            // max_accesorios
+            // 
+            this.max_accesorios.Location = new System.Drawing.Point(232, 555);
+            this.max_accesorios.Name = "max_accesorios";
+            this.max_accesorios.Size = new System.Drawing.Size(100, 20);
+            this.max_accesorios.TabIndex = 21;
+            // 
+            // max_gomeria
+            // 
+            this.max_gomeria.Location = new System.Drawing.Point(232, 526);
+            this.max_gomeria.Name = "max_gomeria";
+            this.max_gomeria.Size = new System.Drawing.Size(100, 20);
+            this.max_gomeria.TabIndex = 22;
+            // 
+            // max_combustible
+            // 
+            this.max_combustible.Location = new System.Drawing.Point(232, 496);
+            this.max_combustible.Name = "max_combustible";
+            this.max_combustible.Size = new System.Drawing.Size(100, 20);
+            this.max_combustible.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 727);
+            this.Controls.Add(this.max_combustible);
+            this.Controls.Add(this.max_gomeria);
+            this.Controls.Add(this.max_accesorios);
+            this.Controls.Add(this.max_cliente);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tabla_cliente);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Simular);
@@ -537,7 +628,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_cliente)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -567,7 +658,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox nroB_comb;
         private System.Windows.Forms.TextBox nroA_comb;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tabla_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn min_llegada;
         private System.Windows.Forms.DataGridViewTextBoxColumn minuto_fuera;
@@ -600,6 +691,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tiempo_aten_acc_tabla;
         private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_acc_tabla;
         private System.Windows.Forms.DataGridViewTextBoxColumn cola_accesorios_tabla;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox max_cliente;
+        private System.Windows.Forms.TextBox max_accesorios;
+        private System.Windows.Forms.TextBox max_gomeria;
+        private System.Windows.Forms.TextBox max_combustible;
     }
 }
 

@@ -53,7 +53,9 @@ namespace FinalSim2020
             }
             sumaRnd = this.TruncateFunction(sumaRnd, 4);
 
-            return ((sumaRnd - 6) * desviacionEstandar) + normal;
+            var num = ((sumaRnd - 6) * desviacionEstandar) + normal;
+
+            return  num < 0 ?  num * (-1) : num; 
         }
 
         public double AtencionCombustible()
