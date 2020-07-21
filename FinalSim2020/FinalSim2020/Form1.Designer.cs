@@ -36,16 +36,22 @@
             this.tipo_servicio_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tiempo_atencion_combustible_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fin_at_com1_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_com1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fin_aten_com2_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_com2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fin_aten_com3_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_com3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cola_combustible_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_servicio_posCom_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tiempo_aten_gom_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fin_aten_gom1_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_gom1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fin_aten_gom2_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_gom2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cola_gom_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tiempo_aten_acc_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fin_aten_acc_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_acce = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cola_accesorios_tabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.minutos_a_simular = new System.Windows.Forms.TextBox();
@@ -88,12 +94,15 @@
             this.max_accesorios = new System.Windows.Forms.TextBox();
             this.max_gomeria = new System.Windows.Forms.TextBox();
             this.max_combustible = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cantidad_cliente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_estacion)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_cliente)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabla_estacion
@@ -109,16 +118,22 @@
             this.tipo_servicio_tabla,
             this.tiempo_atencion_combustible_tabla,
             this.fin_at_com1_tabla,
+            this.estado_com1,
             this.fin_aten_com2_tabla,
+            this.estado_com2,
             this.fin_aten_com3_tabla,
+            this.estado_com3,
             this.cola_combustible_tabla,
             this.tipo_servicio_posCom_tabla,
             this.tiempo_aten_gom_tabla,
             this.fin_aten_gom1_tabla,
+            this.estado_gom1,
             this.fin_aten_gom2_tabla,
+            this.estado_gom2,
             this.cola_gom_tabla,
             this.tiempo_aten_acc_tabla,
             this.fin_aten_acc_tabla,
+            this.estado_acce,
             this.cola_accesorios_tabla});
             this.tabla_estacion.Location = new System.Drawing.Point(3, 149);
             this.tabla_estacion.Name = "tabla_estacion";
@@ -168,17 +183,35 @@
             this.fin_at_com1_tabla.Name = "fin_at_com1_tabla";
             this.fin_at_com1_tabla.ReadOnly = true;
             // 
+            // estado_com1
+            // 
+            this.estado_com1.HeaderText = "Estado";
+            this.estado_com1.Name = "estado_com1";
+            this.estado_com1.ReadOnly = true;
+            // 
             // fin_aten_com2_tabla
             // 
             this.fin_aten_com2_tabla.HeaderText = "Fin atenc. Comb2";
             this.fin_aten_com2_tabla.Name = "fin_aten_com2_tabla";
             this.fin_aten_com2_tabla.ReadOnly = true;
             // 
+            // estado_com2
+            // 
+            this.estado_com2.HeaderText = "Estado";
+            this.estado_com2.Name = "estado_com2";
+            this.estado_com2.ReadOnly = true;
+            // 
             // fin_aten_com3_tabla
             // 
             this.fin_aten_com3_tabla.HeaderText = "Fin atenc. Comb3";
             this.fin_aten_com3_tabla.Name = "fin_aten_com3_tabla";
             this.fin_aten_com3_tabla.ReadOnly = true;
+            // 
+            // estado_com3
+            // 
+            this.estado_com3.HeaderText = "Estado";
+            this.estado_com3.Name = "estado_com3";
+            this.estado_com3.ReadOnly = true;
             // 
             // cola_combustible_tabla
             // 
@@ -204,11 +237,23 @@
             this.fin_aten_gom1_tabla.Name = "fin_aten_gom1_tabla";
             this.fin_aten_gom1_tabla.ReadOnly = true;
             // 
+            // estado_gom1
+            // 
+            this.estado_gom1.HeaderText = "Estado";
+            this.estado_gom1.Name = "estado_gom1";
+            this.estado_gom1.ReadOnly = true;
+            // 
             // fin_aten_gom2_tabla
             // 
             this.fin_aten_gom2_tabla.HeaderText = "Fin Atencion Gom2";
             this.fin_aten_gom2_tabla.Name = "fin_aten_gom2_tabla";
             this.fin_aten_gom2_tabla.ReadOnly = true;
+            // 
+            // estado_gom2
+            // 
+            this.estado_gom2.HeaderText = "Estado";
+            this.estado_gom2.Name = "estado_gom2";
+            this.estado_gom2.ReadOnly = true;
             // 
             // cola_gom_tabla
             // 
@@ -227,6 +272,12 @@
             this.fin_aten_acc_tabla.HeaderText = "Fin Atencion Accesorios ";
             this.fin_aten_acc_tabla.Name = "fin_aten_acc_tabla";
             this.fin_aten_acc_tabla.ReadOnly = true;
+            // 
+            // estado_acce
+            // 
+            this.estado_acce.HeaderText = "Estado";
+            this.estado_acce.Name = "estado_acce";
+            this.estado_acce.ReadOnly = true;
             // 
             // cola_accesorios_tabla
             // 
@@ -346,7 +397,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.nroB_comb);
             this.groupBox2.Controls.Add(this.nroA_comb);
-            this.groupBox2.Location = new System.Drawing.Point(246, 34);
+            this.groupBox2.Location = new System.Drawing.Point(232, 34);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
             this.groupBox2.TabIndex = 10;
@@ -433,7 +484,7 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.nroB_gom);
             this.groupBox3.Controls.Add(this.nroA_gom);
-            this.groupBox3.Location = new System.Drawing.Point(484, 34);
+            this.groupBox3.Location = new System.Drawing.Point(456, 34);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 100);
             this.groupBox3.TabIndex = 12;
@@ -480,7 +531,7 @@
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.nroB_acc);
             this.groupBox4.Controls.Add(this.nroA_acc);
-            this.groupBox4.Location = new System.Drawing.Point(721, 34);
+            this.groupBox4.Location = new System.Drawing.Point(680, 34);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(200, 100);
             this.groupBox4.TabIndex = 14;
@@ -568,6 +619,7 @@
             // 
             // max_cliente
             // 
+            this.max_cliente.Enabled = false;
             this.max_cliente.Location = new System.Drawing.Point(656, 526);
             this.max_cliente.Name = "max_cliente";
             this.max_cliente.Size = new System.Drawing.Size(100, 20);
@@ -575,6 +627,7 @@
             // 
             // max_accesorios
             // 
+            this.max_accesorios.Enabled = false;
             this.max_accesorios.Location = new System.Drawing.Point(232, 555);
             this.max_accesorios.Name = "max_accesorios";
             this.max_accesorios.Size = new System.Drawing.Size(100, 20);
@@ -582,6 +635,7 @@
             // 
             // max_gomeria
             // 
+            this.max_gomeria.Enabled = false;
             this.max_gomeria.Location = new System.Drawing.Point(232, 526);
             this.max_gomeria.Name = "max_gomeria";
             this.max_gomeria.Size = new System.Drawing.Size(100, 20);
@@ -589,16 +643,36 @@
             // 
             // max_combustible
             // 
+            this.max_combustible.Enabled = false;
             this.max_combustible.Location = new System.Drawing.Point(232, 496);
             this.max_combustible.Name = "max_combustible";
             this.max_combustible.Size = new System.Drawing.Size(100, 20);
             this.max_combustible.TabIndex = 23;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.cantidad_cliente);
+            this.groupBox5.Location = new System.Drawing.Point(914, 68);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(145, 65);
+            this.groupBox5.TabIndex = 24;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Cantidad Clientes a Ver";
+            // 
+            // cantidad_cliente
+            // 
+            this.cantidad_cliente.Location = new System.Drawing.Point(25, 31);
+            this.cantidad_cliente.Name = "cantidad_cliente";
+            this.cantidad_cliente.Size = new System.Drawing.Size(64, 20);
+            this.cantidad_cliente.TabIndex = 12;
+            this.cantidad_cliente.Text = "20";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 727);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.max_combustible);
             this.Controls.Add(this.max_gomeria);
             this.Controls.Add(this.max_accesorios);
@@ -622,7 +696,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabla_estacion);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Final Simulacion 2020";
             ((System.ComponentModel.ISupportInitialize)(this.tabla_estacion)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -633,6 +707,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -673,24 +749,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox nroB_acc;
         private System.Windows.Forms.TextBox nroA_acc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Evento_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reloj_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prox_llegada_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn llegada_cliente_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_servicio_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tiempo_atencion_combustible_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_at_com1_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_com2_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_com3_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cola_combustible_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_servicio_posCom_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tiempo_aten_gom_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_gom1_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_gom2_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cola_gom_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tiempo_aten_acc_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_acc_tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cola_accesorios_tabla;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -700,6 +758,32 @@
         private System.Windows.Forms.TextBox max_accesorios;
         private System.Windows.Forms.TextBox max_gomeria;
         private System.Windows.Forms.TextBox max_combustible;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Evento_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reloj_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prox_llegada_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn llegada_cliente_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_servicio_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tiempo_atencion_combustible_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fin_at_com1_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_com1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_com2_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_com2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_com3_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_com3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cola_combustible_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_servicio_posCom_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tiempo_aten_gom_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_gom1_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_gom1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_gom2_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_gom2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cola_gom_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tiempo_aten_acc_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fin_aten_acc_tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_acce;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cola_accesorios_tabla;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox cantidad_cliente;
     }
 }
 

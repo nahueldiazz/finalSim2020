@@ -18,7 +18,7 @@ namespace FinalSim2020
         string fin_atencion_accesorios = "Fin_atencion_accesorios";
         string fin_atenicon_gomeria = "Fin_atencion_gomeria";
         string inicializacion = "Inicializacion";
-        string finalizacion = "Fin de simulacion";
+        string finalizacion = "Fin_de_simulacion";
 
         string combustible = "Carga Combustible";
         string gomeria = "Gomería";
@@ -78,11 +78,14 @@ namespace FinalSim2020
         double maxDiferencia = 0;
 
 
+        string estadoCom1 = "Libre";
+        string estadoCom2 = "Libre";
+        string estadoCom3 = "Libre";
+        string estadoGom1 = "Libre";
+        string estadoGom2 = "Libre";
+        string estadoAcc = "Libre";
 
-
-
-
-
+        int cantidadCliente = 0;
 
         public Form1()
         {
@@ -101,19 +104,26 @@ namespace FinalSim2020
         {
             if (hastaSim < desdeSim)
             {
-                MessageBox.Show("El parametro DESDE debe ser mayor al parametro HASTA");
+                MessageBox.Show("El parametro DESDE debe ser mayor al parametro HASTA.");
                 return;
             }
 
             if ((hastaSim - desdeSim) > 30)
             {
-                MessageBox.Show("La diferencia entre los parametros DESDE y HASTA no deben superar el numero 30");
+                MessageBox.Show("La diferencia entre los parametros DESDE y HASTA no deben superar el numero 30.");
                 return;
             }
 
             if (desdeSim > minutosASimular)
             {
-                MessageBox.Show("El parametro DESDE no debe ser mayor al parametro MINUTOS A SIMULAR");
+                MessageBox.Show("El parametro DESDE no debe ser mayor al parametro MINUTOS A SIMULAR.");
+                return;
+
+            }
+
+            if (cantidadCliente > 100)
+            {
+                MessageBox.Show("El número máximo de clientes no debe superar los 100.");
                 return;
 
             }
@@ -175,6 +185,15 @@ namespace FinalSim2020
             maxDiferencia = 0;
 
 
+            estadoCom1 = "Libre";
+            estadoCom2 = "Libre";
+            estadoCom3 = "Libre";
+            estadoGom1 = "Libre";
+            estadoGom2 = "Libre";
+            estadoAcc = "Libre";
+
+
+            cantidadCliente = int.Parse(cantidad_cliente.Text);
 
         }
 
@@ -184,7 +203,7 @@ namespace FinalSim2020
 
             llegaClienteNum = proxLlegadaCliente;
 
-            tabla_estacion.Rows.Add(inicializacion, reloj, proxLlegadaCliente, llegaClienteNum, tipoServicio, tiempoAtencionCom, finAtencionCom1, finAtencionCom2, finAtencionCom3, colaCombustible, tipoServicioPostCombustible, tiempoAtencionGomeria, finAtencionGom1, finAtencionGom2, colaGomeria, tiempoAtencionAccesorios, finAtencionAcessorios, colaAceesorios);
+            tabla_estacion.Rows.Add(inicializacion, reloj, proxLlegadaCliente, llegaClienteNum, tipoServicio, tiempoAtencionCom, finAtencionCom1, estadoCom1, finAtencionCom2, estadoCom2, finAtencionCom3, estadoCom3, colaCombustible, tipoServicioPostCombustible, tiempoAtencionGomeria, finAtencionGom1, estadoGom1, finAtencionGom2, estadoGom2, colaGomeria, tiempoAtencionAccesorios, finAtencionAcessorios, estadoAcc, colaAceesorios);
 
             while (reloj <= minutosASimular)
             {
@@ -231,7 +250,7 @@ namespace FinalSim2020
                         proxLlegadaCliente = proxNum.LlegadaCliente();
                         llegaClienteNum = proxLlegadaCliente + reloj;
 
-                     
+
                         tipoServicioPostCombustible = "";
 
                         break;
@@ -273,7 +292,7 @@ namespace FinalSim2020
 
                             colaCombustibleconCliente.Remove(clienteCombustible);
                             colaCombustible = colaCombustible < 0 ? 0 : colaCombustible;
-                           
+
                         }
                         if (tipoServicioPostCombustible == accesorios)
                         {
@@ -303,18 +322,24 @@ namespace FinalSim2020
                                 finAtencionCom1 = tiempoAtencionCom + reloj;
                                 colaCombustible--;
 
+                                estadoCom1 = finAtencionCom1 != 0 ? "Ocupado" : "Libre";
+
                             }
                             if (reloj == finAtencionCom2)
                             {
                                 tiempoAtencionCom = proxNum.AtencionCombustible();
                                 finAtencionCom2 = tiempoAtencionCom + reloj;
                                 colaCombustible--;
+                                estadoCom2 = finAtencionCom2 != 0 ? "Ocupado" : "Libre";
+
                             }
                             if (reloj == finAtencionCom3)
                             {
                                 tiempoAtencionCom = proxNum.AtencionCombustible();
                                 finAtencionCom3 = tiempoAtencionCom + reloj;
                                 colaCombustible--;
+                                estadoCom3 = finAtencionCom3 != 0 ? "Ocupado" : "Libre";
+
                             }
 
                         }
@@ -326,15 +351,18 @@ namespace FinalSim2020
                             {
                                 finAtencionCom1 = 0;
 
+                                estadoCom1 = finAtencionCom1 != 0 ? "Ocupado" : "Libre";
                             }
                             if (reloj == finAtencionCom2)
                             {
                                 finAtencionCom2 = 0;
+                                estadoCom2 = finAtencionCom2 != 0 ? "Ocupado" : "Libre";
 
                             }
                             if (reloj == finAtencionCom3)
                             {
                                 finAtencionCom3 = 0;
+                                estadoCom3 = finAtencionCom3 != 0 ? "Ocupado" : "Libre";
 
                             }
 
@@ -351,7 +379,7 @@ namespace FinalSim2020
                         var clienteGomeria = colaGomeriaconCliente.First();
                         clienteGomeria.MinFin = reloj;
                         grillaconClientesfinalizados.Add(clienteGomeria);
-                        colaAccesoriosconCliente.Remove(clienteGomeria);
+                        colaGomeriaconCliente.Remove(clienteGomeria);
 
                         colaGomeria = colaGomeria < 0 ? 0 : colaGomeria;
 
@@ -362,6 +390,7 @@ namespace FinalSim2020
                                 tiempoAtencionGomeria = proxNum.AtencionGomeria();
                                 finAtencionGom1 = tiempoAtencionGomeria + reloj;
                                 colaGomeria--;
+                                estadoGom1 = finAtencionGom1 != 0 ? "Ocupado" : "Libre";
 
                             }
                             else
@@ -369,6 +398,8 @@ namespace FinalSim2020
                                 tiempoAtencionGomeria = proxNum.AtencionGomeria();
                                 finAtencionGom2 = tiempoAtencionGomeria + reloj;
                                 colaGomeria--;
+                                estadoGom2 = finAtencionGom2 != 0 ? "Ocupado" : "Libre";
+
                             }
 
                         }
@@ -379,11 +410,14 @@ namespace FinalSim2020
                             if (reloj == finAtencionGom1)
                             {
                                 finAtencionGom1 = 0;
+                                estadoGom1 = finAtencionGom1 != 0 ? "Ocupado" : "Libre";
 
                             }
                             else
                             {
                                 finAtencionGom2 = 0;
+                                estadoGom2 = finAtencionGom2 != 0 ? "Ocupado" : "Libre";
+
                             }
 
                         }
@@ -412,12 +446,15 @@ namespace FinalSim2020
                             tiempoAtencionAccesorios = proxNum.AtencionAccesorios();
                             finAtencionAcessorios = tiempoAtencionAccesorios + reloj;
                             colaAceesorios--;
+                            estadoAcc = finAtencionAcessorios != 0 ? "Ocupado" : "Libre";
 
                         }
                         else
                         {
                             tiempoAtencionAccesorios = 0;
                             finAtencionAcessorios = 0;
+                            estadoAcc = finAtencionAcessorios != 0 ? "Ocupado" : "Libre";
+
                         }
                         tipoServicio = "";
                         tipoServicioPostCombustible = "";
@@ -430,7 +467,7 @@ namespace FinalSim2020
 
                 if (reloj >= desdeSim && reloj <= hastaSim)
                 {
-                    tabla_estacion.Rows.Add(evento, reloj, proxLlegadaCliente, llegaClienteNum, tipoServicio, tiempoAtencionCom, finAtencionCom1, finAtencionCom2, finAtencionCom3, colaCombustible, tipoServicioPostCombustible, tiempoAtencionGomeria, finAtencionGom1, finAtencionGom2, colaGomeria, tiempoAtencionAccesorios, finAtencionAcessorios, colaAceesorios);
+                    tabla_estacion.Rows.Add(evento, reloj, proxLlegadaCliente, llegaClienteNum, tipoServicio, tiempoAtencionCom, finAtencionCom1, estadoCom1, finAtencionCom2, estadoCom2, finAtencionCom3, estadoCom3, colaCombustible, tipoServicioPostCombustible, tiempoAtencionGomeria, finAtencionGom1, estadoGom1, finAtencionGom2, estadoGom2, colaGomeria, tiempoAtencionAccesorios, finAtencionAcessorios, estadoAcc, colaAceesorios);
 
                 }
 
@@ -438,9 +475,11 @@ namespace FinalSim2020
                 maxGomeria = colaGomeria > maxGomeria ? colaGomeria : maxGomeria;
                 maxAccesorio = colaAceesorios > maxAccesorio ? colaAceesorios : maxAccesorio;
 
+
+
             }
 
-            tabla_estacion.Rows.Add(finalizacion, minutosASimular, proxLlegadaCliente, llegaClienteNum, tipoServicio, tiempoAtencionCom, finAtencionCom1, finAtencionCom2, finAtencionCom3, colaCombustible, tipoServicioPostCombustible, tiempoAtencionGomeria, finAtencionGom1, finAtencionGom2, colaGomeria, tiempoAtencionAccesorios, finAtencionAcessorios, colaAceesorios);
+            tabla_estacion.Rows.Add(finalizacion, minutosASimular, proxLlegadaCliente, llegaClienteNum, tipoServicio, tiempoAtencionCom, finAtencionCom1, estadoCom1, finAtencionCom2, estadoCom2, finAtencionCom3, estadoCom3, colaCombustible, tipoServicioPostCombustible, tiempoAtencionGomeria, finAtencionGom1, estadoGom1, finAtencionGom2, estadoGom2, colaGomeria, tiempoAtencionAccesorios, finAtencionAcessorios, estadoAcc, colaAceesorios);
 
             this.llenargrillaCliente();
 
@@ -461,19 +500,36 @@ namespace FinalSim2020
         public void llenargrillaCliente()
         {
             List<double> diferencias = new List<double>();
-
+            var vuelta = 0;
             foreach (var cliente in grillaconClientesfinalizados)
             {
-                cliente.Diferencia = cliente.MinFin - cliente.MinLlegada;
+                vuelta++;
 
-                tabla_cliente.Rows.Add(cliente.NumeroCliente, cliente.MinLlegada, cliente.MinFin, cliente.Diferencia);
+                cliente.Diferencia = this.TruncateFunction(cliente.MinFin - cliente.MinLlegada,4);
+
+                if (vuelta <= cantidadCliente)
+                {
+                    tabla_cliente.Rows.Add(cliente.NumeroCliente, cliente.MinLlegada, cliente.MinFin, cliente.Diferencia);
+                }
+                
 
                 diferencias.Add(cliente.Diferencia);
 
+           
             }
 
             maxDiferencia = diferencias.Max();
             max_cliente.Text = maxDiferencia.ToString();
+
+            var clienteMaximoDeEspera = grillaconClientesfinalizados.First(x => x.Diferencia == maxDiferencia);
+            tabla_cliente.Rows.Add(clienteMaximoDeEspera.NumeroCliente, clienteMaximoDeEspera.MinLlegada, clienteMaximoDeEspera.MinFin, clienteMaximoDeEspera.Diferencia);
+
+            int r = tabla_cliente.Rows.Count;
+
+            tabla_cliente.Rows[r - 1].DefaultCellStyle.ForeColor = Color.FromArgb(156, 0, 6);
+            tabla_cliente.Rows[r - 1].DefaultCellStyle.BackColor = Color.Yellow;
+            tabla_cliente.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
         }
 
         public void atencionCombustible()
@@ -483,6 +539,8 @@ namespace FinalSim2020
                 tiempoAtencionCom = proxNum.AtencionCombustible();
                 finAtencionCom1 = tiempoAtencionCom + reloj;
                 colaCombustible = colaCombustible - 1;
+
+                estadoCom1 = finAtencionCom1 != 0 ? "Ocupado" : "Libre";
             }
 
             else if (finAtencionCom2 == 0)
@@ -490,6 +548,8 @@ namespace FinalSim2020
                 tiempoAtencionCom = proxNum.AtencionCombustible();
                 finAtencionCom2 = tiempoAtencionCom + reloj;
                 colaCombustible = colaCombustible - 1;
+                estadoCom2 = finAtencionCom2 != 0 ? "Ocupado" : "Libre";
+
             }
 
             else if (finAtencionCom3 == 0)
@@ -497,6 +557,8 @@ namespace FinalSim2020
                 tiempoAtencionCom = proxNum.AtencionCombustible();
                 finAtencionCom3 = tiempoAtencionCom + reloj;
                 colaCombustible = colaCombustible - 1;
+                estadoCom3 = finAtencionCom3 != 0 ? "Ocupado" : "Libre";
+
             }
 
         }
@@ -508,6 +570,8 @@ namespace FinalSim2020
                 tiempoAtencionGomeria = proxNum.AtencionGomeria();
                 finAtencionGom1 = tiempoAtencionGomeria + reloj;
                 colaGomeria = colaGomeria - 1;
+                estadoGom1 = finAtencionGom1 != 0 ? "Ocupado" : "Libre";
+
             }
 
             else if (finAtencionGom2 == 0)
@@ -515,6 +579,8 @@ namespace FinalSim2020
                 tiempoAtencionGomeria = proxNum.AtencionGomeria();
                 finAtencionGom2 = tiempoAtencionGomeria + reloj;
                 colaGomeria = colaGomeria - 1;
+                estadoGom2 = finAtencionGom2 != 0 ? "Ocupado" : "Libre";
+
             }
 
         }
@@ -526,6 +592,8 @@ namespace FinalSim2020
                 tiempoAtencionAccesorios = proxNum.AtencionAccesorios();
                 finAtencionAcessorios = tiempoAtencionAccesorios + reloj;
                 colaAceesorios = colaAceesorios - 1;
+                estadoAcc = finAtencionAcessorios != 0 ? "Ocupado" : "Libre";
+
             }
 
         }
@@ -555,6 +623,11 @@ namespace FinalSim2020
             if (reloj == finAtencionGom2) return 3;
             return 4;
 
+        }
+
+        public double TruncateFunction(double number, int digit)
+        {
+            return Math.Truncate((Math.Pow(10.0, (double)digit) * number)) / (Math.Pow(10.0, (double)digit));
         }
     }
 }

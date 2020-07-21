@@ -55,28 +55,28 @@ namespace FinalSim2020
 
             var num = ((sumaRnd - 6) * desviacionEstandar) + normal;
 
-            return  num < 0 ?  num * (-1) : num; 
+            return num < 0 ? this.TruncateFunction(num * (-1), 4) : this.TruncateFunction(num, 4);
         }
 
         public double AtencionCombustible()
         {
             var nuevoRnd = this.TruncateFunction(rnd.NextDouble(), 4);
 
-            return nroACombustible + (nuevoRnd * (nroBCombustible - nroACombustible));
+            return this.TruncateFunction(nroACombustible + (nuevoRnd * (nroBCombustible - nroACombustible)), 4);
         }
 
         public double AtencionGomeria()
         {
             var nuevoRnd = this.TruncateFunction(rnd.NextDouble(), 4);
 
-            return nroAGomeria + (nuevoRnd * (nroBGomeria - nroAGomeria));
+            return this.TruncateFunction(nroAGomeria + (nuevoRnd * (nroBGomeria - nroAGomeria)), 4);
         }
 
         public double AtencionAccesorios()
         {
             var nuevoRnd = this.TruncateFunction(rnd.NextDouble(), 4);
 
-            return nroAAccesorios + (nuevoRnd * (nroBAccesorios - nroAAccesorios));
+            return this.TruncateFunction(nroAAccesorios + (nuevoRnd * (nroBAccesorios - nroAAccesorios)), 4);
         }
 
 
